@@ -1,38 +1,30 @@
-$nav-item-padding: .5rem;
+@import 'web_modules/res/styles/base';
 
 .header {
-  background: #111;
-  color: #eee;
-}
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  line-height: 3rem;
-  margin: 0 auto 1rem;
-  max-width: calc(60rem + ($nav-item-padding * 2));
-  padding: 0 1rem;
-}
-
-.navPart1,
-.navPart2 {
-  display: flex;
-  flex-direction: row;
-}
-
-.link {
   align-items: center;
-  color: inherit;
+  background: $light-black;
   display: flex;
-  padding: 0 $nav-item-padding;
+  font-size: $header-font-size;
+  height: $header-height;
+  justify-content: space-between;
+}
+
+.logo {
+  //placeholder
+}
+
+.logoLink {
+  color: $yellow;
   text-decoration: none;
 }
 
-.link svg {
-  fill: currentColor;
-  height: 1rem;
-  margin-right: .5rem;
-  opacity: .5;
-  width: 1rem;
+.navButton {
+  color: $yellow;
+}
+
+@include respond-to($tablet-width) {
+  .header {
+    font-size: $header-font-size-desktop;
+    height: $header-height-desktop;
+  }
 }

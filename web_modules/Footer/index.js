@@ -12,26 +12,26 @@ export default class Footer extends Component {
           href={process.env.PHENOMIC_HOMEPAGE}
           className={styles.link}
         >
-          {"Powered by "}
+          {'Powered by '}
           <span className={styles.reference}>
             {`<${ process.env.PHENOMIC_NAME} />`}
           </span>
         </a>
 
-        {" | "}
-        {"Pages: "}
+        {' | '}
+        {'Pages: '}
         <Link
           className={styles.link}
           to="/404.html"
         >
-          {"404"}
+          {'404'}
         </Link>
-        {", "}
+        {', '}
         <Link
           className={styles.link}
           to="/loading/"
         >
-          {"Loading"}
+          {'Loading'}
         </Link>
       </footer>
     )

@@ -12,7 +12,7 @@ const PagePreview = ({ __url, title, date }) => {
       {
         pageDate &&
         <small>
-          {" "}
+          {' '}
           <time key={pageDate.toISOString()}>
             {pageDate.toDateString()}
           </time>

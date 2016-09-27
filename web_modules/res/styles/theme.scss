@@ -3,3 +3,18 @@
 html {
   font-family: $font-base;
 }
+
+body {
+  background: $black;
+  color: $white;
+}
+
+a {
+  color: $green;
+  text-decoration: none;
+  transition: color .5s ease;
+
+  &:hover {
+    color: $light-yellow;
+  }
+}
