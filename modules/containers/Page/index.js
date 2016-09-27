@@ -17,7 +17,8 @@ class Page extends Component {
       head,
       body,
       header,
-      footer
+      footer,
+      displayTitle = true
     } = props
 
     invariant(
@@ -25,7 +26,7 @@ class Page extends Component {
       `Your page '${ __filename }' needs a title`
     )
 
-    const metaTitle = head.metaTitle ? head.metaTitle : head.title
+    const metaTitle = `${head.metaTitle ? head.metaTitle : head.title} | ${pkg.siteName}`
 
     const meta = [
       { property: 'og:type', content: 'article' },
@@ -50,7 +51,7 @@ class Page extends Component {
         />
 
         {
-          head.title &&
+          head.title && displayTitle &&
           <h1>{head.title}</h1>
         }
         {header}

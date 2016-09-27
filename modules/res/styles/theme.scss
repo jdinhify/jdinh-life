@@ -6,8 +6,12 @@ html {
 }
 
 body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   background: $black;
   color: $white;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 a {
@@ -22,10 +26,15 @@ a {
 
 :global {
   .hljs {
-    background: $black;
+    background: $light-black;
+    border: 1px solid $grey;
+    border-radius: 3px;
     display: block;
+    font-family: 'Lucida Console', Monaco, monospace;
+    // font-size: .75rem;
     overflow-x: auto;
     padding: .5em;
+    word-break: break-word;
   }
 
   .hljs,

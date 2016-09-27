@@ -2,17 +2,18 @@ import React, { PropTypes } from 'react'
 
 import { PagePreview } from 'components'
 
-const PagesList = ({ pages }) => {
+import styles from './index.scss'
 
+const PagesList = ({ pages }) => {
   return (
     <div>
     {
       pages.length
       ? (
-        <ul>
+        <ul className={styles.listContainer}>
         {
           pages.map((page) => (
-            <li key={page.title}><PagePreview {...page} /></li>
+            <li key={page.title} className={styles.listItem}><PagePreview {...page} /></li>
           ))
         }
         </ul>

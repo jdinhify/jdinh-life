@@ -20,8 +20,7 @@ export default class Homepage extends Component {
     .slice(0, numberOfLatestPosts)
 
     return (
-      <Page {...this.props}>
-        <h2>{'Latest Posts'}</h2>
+      <Page {...this.props} displayTitle={false}>
         <PagesList pages={latestPosts} />
       </Page>
     )

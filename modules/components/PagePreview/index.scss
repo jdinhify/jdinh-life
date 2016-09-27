@@ -1,0 +1,16 @@
+@import 'modules/res/styles/base';
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  color: $magenta;
+  font-size: 1.4rem;
+}
+
+.description {
+  padding: $padding-base 0;
+}
