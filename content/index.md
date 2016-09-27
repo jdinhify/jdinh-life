@@ -1,5 +1,5 @@
 ---
-title: Phenomic default boilerplate
+title: JD's
 layout: Homepage
 ---
 

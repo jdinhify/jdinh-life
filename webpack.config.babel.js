@@ -2,7 +2,7 @@ import path from 'path'
 
 import webpack from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import { phenomicLoader } from 'phenomic'
+import { phenomicLoader, phenomicLoaderPresets } from 'phenomic'
 
 import pkg from './package.json'
 
@@ -86,7 +86,7 @@ export const makeConfig = (config = {}) => {
 
     phenomic: {
       context: path.join(__dirname, config.source),
-      // plugins: [ ...phenomicLoaderPresets.markdown ]
+      plugins: [...phenomicLoaderPresets.markdown],
       // see https://phenomic.io/docs/usage/plugins/
       feedsOptions: {
         title: pkg.name,
@@ -132,7 +132,7 @@ export const makeConfig = (config = {}) => {
 
     resolve: {
       extensions: ['.js', '.json', ''],
-      root: [path.join(__dirname, 'node_modules')]
+      root: [path.join(__dirname, 'node_modules'), path.resolve(__dirname, 'modules')]
     },
 
     resolveLoader: { root: [path.join(__dirname, 'node_modules')] }
