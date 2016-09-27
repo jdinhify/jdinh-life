@@ -49,27 +49,22 @@ export const makeConfig = (config = {}) => {
           ],
           include: [
             path.resolve(__dirname, 'scripts'),
-            path.resolve(__dirname, 'web_modules')
+            path.resolve(__dirname, 'modules')
           ]
         },
 
-        // ! \\
-        // by default *.css files are considered as CSS Modules
-        // And *.global.css are considered as global (normal) CSS
-
-        // *.css => CSS Modules
         {
           test: /\.scss$/,
-          include: path.resolve(__dirname, 'web_modules'),
+          include: path.resolve(__dirname, 'modules'),
           loader: ExtractTextPlugin.extract(
-            'style-loader',
-            [`css-loader?modules&localIdentName=${
+            'style',
+            [`css?modules&importLoaders=2&localIdentName=${
                 config.production
                 ? '[hash:base64:5]'
                 : '[path][name]--[local]--[hash:base64:5]'
               }`,
-              'postcss-loader',
-              'sass-loader'
+              'postcss',
+              'sass'
             ].join('!'),
           )
         },

@@ -6,7 +6,7 @@
   "repository": "",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
-    "lint:css": "sass-lint \"web_modules/**/*.scss\"",
+    "lint:css": "sass-lint \"modules/**/*.scss\"",
     "lint": "npm-run-all --parallel lint:*",
     "start": "phenomic start",
     "build": "phenomic build",
