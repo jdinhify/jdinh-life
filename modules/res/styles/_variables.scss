@@ -22,11 +22,13 @@ $font-base: Verdana, Geneva, sans-serif;
 
 // Layout
 $tablet-width: 48rem;
+$padding-base: 1rem;
 
 // Mobile
-$header-height: 3rem;
-$header-font-size: 2rem;
 
 // Desktop
-$header-height-desktop: 5rem;
-$header-font-size-desktop: 3rem;
+
+$header-height: 5rem;
+$header-font-size: 3rem;
+$header-height-scrolled: 3rem;
+$header-font-size-scrolled: 2rem;

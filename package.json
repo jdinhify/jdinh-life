@@ -5,6 +5,7 @@
   "twitter": "jdinhlife",
   "repository": "",
   "scripts": {
+    "deploy": "npm run build && aws s3 sync dist/ s3://phenomic.jdinh.life/",
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "sass-lint \"modules/**/*.scss\"",
     "lint": "npm-run-all --parallel lint:*",

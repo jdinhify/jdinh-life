@@ -7,5 +7,6 @@
 .content {
   margin: auto;
   max-width: 60rem;
-  padding: 1rem .75rem;
+  padding: $header-height + $padding-base $padding-base $padding-base;
+  transition: padding .5s;
 }
