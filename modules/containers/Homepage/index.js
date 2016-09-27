@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import enhanceCollection from 'phenomic/lib/enhance-collection'
 
-import Page from '../Page'
-import PagesList from '../../PagesList'
+import { Page } from 'containers'
+import { PagesList } from 'components'
 
 const numberOfLatestPosts = 6
 

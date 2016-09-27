@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 import styles from './index.scss'
 
@@ -21,12 +22,12 @@ export default class Header extends Component {
   handleScroll = (event) => {
     const scrollTop = event.srcElement.body.scrollTop
 
-    if (!this.state.scrolled && scrollTop !== 0) {
+    if (!this.state.scrolled && scrollTop > 16) {
       this.setState({
         ...this.state,
         scrolled: true
       })
-    } else if (this.state.scrolled && scrollTop === 0) {
+    } else if (this.state.scrolled && scrollTop <= 16) {
       this.setState({
         ...this.state,
         scrolled: false
@@ -42,7 +43,7 @@ export default class Header extends Component {
     return (
       <header className={this.headerClassName()}>
         <div className={styles.logo}>
-          <a className={styles.logoLink} href="/">{'JD\'s'}</a>
+          <Link className={styles.logoLink} to="/">{'JD\'s'}</Link>
         </div>
         <nav className={styles.nav}>
           <button className={styles.navButton} >{'Button'}</button>

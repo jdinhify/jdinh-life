@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
-import '../res/styles/theme.scss'
+import 'res/styles/theme.scss'
 import styles from './index.scss'
 
-import Header from '../Header'
-import Footer from '../Footer'
+import {
+  Footer,
+  Header
+} from 'components'
 
 export default class Layout extends Component {
 

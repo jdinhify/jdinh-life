@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react'
 
-import PagePreview from '../PagePreview'
+import { PagePreview } from 'components'
 
 const PagesList = ({ pages }) => {
+
   return (
     <div>
     {
