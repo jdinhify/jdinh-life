@@ -15,8 +15,12 @@
     "pretest": "npm run lint",
     "test": "npm run build"
   },
+  "ga": {
+    "id": "UA-79896656-1"
+  },
   "phenomic": {
-    "CNAME": false
+    "CNAME": false,
+    "offline": true
   },
   "babel": {
     "presets": [
