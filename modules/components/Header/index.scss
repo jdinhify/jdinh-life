@@ -57,8 +57,14 @@
   font-size: 0;
 
   &::before {
+    color: $magenta;
     content: "\25CA";
     font-size: 2rem;
+    padding: 1rem 0 1rem 1rem;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 
   @include respond-to($tablet-width) {
