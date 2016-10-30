@@ -35,24 +35,55 @@
   "eslintConfig": {
     "parser": "babel-eslint",
     "rules": {
-      "array-bracket-spacing": [1, "never"],
+      "array-bracket-spacing": [
+        1,
+        "never"
+      ],
       "arrow-body-style": 0,
       "arrow-parens": 0,
-      "arrow-spacing": [1, { "before": true, "after": true }],
-      "brace-style": [2, "1tbs"],
+      "arrow-spacing": [
+        1,
+        {
+          "before": true,
+          "after": true
+        }
+      ],
+      "brace-style": [
+        2,
+        "1tbs"
+      ],
       "camelcase": 0,
       "comma-dangle": 1,
       "comma-style": 1,
       "dot-notation": 1,
       "eqeqeq": 2,
-      "import/extensions": [1, {"js": "never", "json": "always", "scss": "always"}],
-      "indent": [2, 2, {
-        "SwitchCase": 1
-      }],
+      "import/extensions": [
+        1,
+        {
+          "js": "never",
+          "json": "always",
+          "scss": "always"
+        }
+      ],
+      "indent": [
+        2,
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
       "jsx-quotes": 1,
       "keyword-spacing": 1,
-      "linebreak-style": [2, "unix"],
-      "new-cap": [1, { "newIsCap": false }],
+      "linebreak-style": [
+        2,
+        "unix"
+      ],
+      "new-cap": [
+        1,
+        {
+          "newIsCap": false
+        }
+      ],
       "no-array-constructor": 1,
       "no-console": 0,
       "no-const-assign": 1,
@@ -61,20 +92,35 @@
       "no-param-reassign": 0,
       "no-unneeded-ternary": 1,
       "no-var": 1,
-      "object-curly-spacing": ["error", "always"],
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
       "one-var": 0,
       "padded-blocks": 0,
       "prefer-arrow-callback": 0,
       "prefer-const": 1,
       "prefer-template": 1,
-      "quote-props": [0, "as-needed"],
-      "quotes": [1, "single", { "avoidEscape": true }],
+      "quote-props": [
+        0,
+        "as-needed"
+      ],
+      "quotes": [
+        1,
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
       "react/display-name": 0,
       "react/forbid-prop-types": 0,
       "react/jsx-boolean-value": 1,
       "react/jsx-closing-bracket-location": 0,
       "react/jsx-curly-spacing": 1,
-      "react/jsx-indent-props": [2, 2],
+      "react/jsx-indent-props": [
+        2,
+        2
+      ],
       "react/jsx-max-props-per-line": 0,
       "react/jsx-no-duplicate-props": 1,
       "react/jsx-no-literals": 1,
@@ -96,9 +142,15 @@
       "react/self-closing-comp": 1,
       "react/sort-comp": 1,
       "react/sort-prop-types": 1,
-      "semi": [2, "never"],
+      "semi": [
+        2,
+        "never"
+      ],
       "space-before-blocks": 1,
-      "space-in-parens": [1, "never"]
+      "space-in-parens": [
+        1,
+        "never"
+      ]
     },
     "env": {
       "browser": true,
@@ -175,5 +227,8 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.12.1",
     "whatwg-fetch": "^0.11.0"
+  },
+  "dependencies": {
+    "react-ga": "^2.1.2"
   }
 }
