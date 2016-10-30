@@ -17,12 +17,29 @@ export default class Header extends Component {
     })
   }
 
+  inactivateNav() {
+    if (this.state.navActive) {
+      this.setState({
+        ...this.state,
+        navActive: false
+      })
+    }
+  }
+
+  handleNavLinkClick = () => {
+    this.inactivateNav()
+  }
+
   handleNavToggle = () => {
     this.toggleNavClass()
   }
 
   renderNavClass() {
     return `${styles.nav} ${this.state.navActive ? styles.navActive : styles.navInactive}`
+  }
+
+  renderNavToggleClass() {
+    return `${styles.navToggle} ${this.state.navActive ? styles.navToggleActive : styles.navToggleInactive}`
   }
 
   render() {
@@ -33,11 +50,11 @@ export default class Header extends Component {
             <Link className={styles.logoLink} to="/">{'JD\'s'}</Link>
           </div>
           <div
-            className={styles.navToggle}
+            className={this.renderNavToggleClass()}
             onClick={this.handleNavToggle}
             >{'Nav Toggle'}</div>
           <div className={this.renderNavClass()}>
-            <Link to="/" className={styles.navItem}>{'Home'}</Link>
+            <Link onClick={this.handleNavLinkClick} to="/" className={styles.navItem}>{'Home'}</Link>
           </div>
         </div>
       </header>

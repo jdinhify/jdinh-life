@@ -27,6 +27,7 @@
 .nav {
   display: none;
   flex: 1 100%;
+  font-family: $font-mono;
   font-size: 1.1rem;
   padding: 1rem 0;
   text-align: center;
@@ -54,13 +55,19 @@
 }
 
 .navToggle {
+  font-family: $font-mono;
   font-size: 0;
 
   &::before {
     color: $magenta;
-    content: "\25CA";
+    content: "\2662";
     font-size: 2rem;
-    padding: 1rem 0 1rem 1rem;
+  }
+
+  &Active {
+    &::before {
+      color: $cyan;
+    }
   }
 
   &:hover {
