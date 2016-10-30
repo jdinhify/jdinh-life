@@ -2,7 +2,9 @@
 @import 'reset';
 
 html {
+  background: $light-black;
   font-family: $font-base;
+  line-height: 1.4;
 }
 
 body {
@@ -40,7 +42,11 @@ h1 {
 
 pre, code {
   background: $light-black;
-  font-family: $font-base;
+  font-family: $font-mono;
+}
+
+pre {
+  padding: .5rem 1rem;
 }
 
 blockquote {
@@ -60,6 +66,14 @@ pre {
   &::before, &::after{
     display: block;
     content: '```';
+  }
+
+  &::before {
+    padding-top: .5rem;
+  }
+
+  &::after {
+    padding-top: .5rem;
   }
 }
 
@@ -131,7 +145,6 @@ pre {
   .hljs {
     display: block;
     overflow-x: auto;
-    padding: .5em;
     word-break: break-word;
   }
 
