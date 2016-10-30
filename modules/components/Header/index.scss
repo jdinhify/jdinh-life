@@ -3,14 +3,67 @@
 .header {
   align-items: center;
   background: $light-black;
-  display: flex;
   font-size: $header-font-size;
-  justify-content: space-between;
   padding: 1rem;
+
+  @include respond-to($tablet-width) {
+    padding: 0 1rem;
+  }
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 64rem;
 }
 
 .logo {
-  // placeholder
+  margin-right: 1rem;
+}
+
+.nav {
+  display: none;
+  flex: 1 100%;
+  font-size: 1.1rem;
+  padding: 1rem 0;
+  text-align: center;
+
+  @include respond-to($tablet-width) {
+    display: flex;
+    flex: 0 1 auto;
+  }
+}
+
+.navItem {
+  color: $magenta;
+  display: block;
+  padding: .5rem;
+  text-transform: uppercase;
+}
+
+.navActive {
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to($tablet-width) {
+    flex-direction: row;
+  }
+}
+
+.navToggle {
+  font-size: 0;
+
+  &::before {
+    content: "\25CA";
+    font-size: 2rem;
+  }
+
+  @include respond-to($tablet-width) {
+    display: none;
+  }
 }
 
 .logoLink {
