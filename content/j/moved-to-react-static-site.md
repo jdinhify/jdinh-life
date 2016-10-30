@@ -1,5 +1,5 @@
 ---
-title: Moving to React & static site generator
+title: Moved to React & static site generator
 date: 2016-10-30
 layout: Post
 author:
