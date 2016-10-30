@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background: $black;
   color: $white;
-  font-size: 1rem;
+  font-size: 100%;
   font-weight: 400;
 }
 
@@ -24,7 +24,87 @@ a {
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: $light-blue;
+}
+
+h1 {
+  font-size: 1.3rem;
+  padding: 1rem 0;
+
+  &::before {
+    content: '#';
+    display: inline-block;
+    padding-right: .5rem;
+  }
+}
+
 :global {
+  h2 {
+    font-size: 1.25rem;
+    padding: .9rem 0;
+
+    .phenomic-HeadingAnchor {
+      &::before {
+        content: '#';
+      }
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    padding: .8rem 0;
+
+    .phenomic-HeadingAnchor {
+      &::before {
+        content: '##';
+      }
+    }
+  }
+
+  h4 {
+    font-size: 1.15rem;
+    padding: .7rem 0;
+
+    .phenomic-HeadingAnchor {
+      &::before {
+        content: '###';
+      }
+    }
+  }
+
+  h5 {
+    font-size: 1.1rem;
+    padding: .6rem 0;
+
+    .phenomic-HeadingAnchor {
+      &::before {
+        content: '####';
+      }
+    }
+  }
+
+  h6 {
+    font-size: 1.05rem;
+    padding: .5rem 0;
+
+    .phenomic-HeadingAnchor {
+      &::before {
+        content: '#####';
+      }
+    }
+  }
+}
+
+:global {
+  .phenomic-HeadingAnchor{
+    padding-right: .5rem;
+
+    &::before {
+      display: inline;
+    }
+  }
+
   .hljs {
     background: $light-black;
     border: 1px solid $grey;
