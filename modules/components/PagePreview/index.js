@@ -9,9 +9,11 @@ const PagePreview = ({ __url, title, date, description }) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Link to={__url} className={styles.link}>
-          {title}
-        </Link>
+        <h2 className={styles.h}>
+          <Link to={__url} className={styles.link}>
+            {title}
+          </Link>
+        </h2>
         {
           pageDate &&
           <div>
