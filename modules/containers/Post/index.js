@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react'
 
 import { Page } from 'containers'
 
+import styles from './index.scss'
+
 class Post extends Component {
 
   // it's up to you to choose what to do with this layout ;)
@@ -16,7 +18,7 @@ class Post extends Component {
       <Page
         {...props}
         header={
-          <header>
+          <header className={styles.header}>
           {
             pageDate &&
             <time key={pageDate.toISOString()}>
