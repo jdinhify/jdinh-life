@@ -39,6 +39,31 @@ h1 {
   }
 }
 
+pre, code {
+  background: $light-black;
+  font-family: $font-base;
+}
+
+blockquote {
+  border-left: .5rem solid $light-black;
+  padding-left: .5rem;
+}
+
+p {
+  code {
+    &::before, &::after {
+      content: '`';
+    }
+  }
+}
+
+pre {
+  &::before, &::after{
+    display: block;
+    content: '```';
+  }
+}
+
 :global {
 
   h2 {
@@ -105,12 +130,7 @@ h1 {
   }
 
   .hljs {
-    background: $light-black;
-    border: 1px solid $grey;
-    border-radius: 3px;
     display: block;
-    font-family: 'Lucida Console', Monaco, monospace;
-    // font-size: .75rem;
     overflow-x: auto;
     padding: .5em;
     word-break: break-word;
