@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 
 import styles from './index.scss'
 
@@ -17,22 +16,6 @@ export default class Footer extends Component {
             {`<${ process.env.PHENOMIC_NAME} />`}
           </span>
         </a>
-
-        {' | '}
-        {'Pages: '}
-        <Link
-          className={styles.link}
-          to="/404.html"
-        >
-          {'404'}
-        </Link>
-        {', '}
-        <Link
-          className={styles.link}
-          to="/loading/"
-        >
-          {'Loading'}
-        </Link>
       </footer>
     )
   }
