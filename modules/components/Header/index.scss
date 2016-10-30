@@ -5,25 +5,12 @@
   background: $light-black;
   display: flex;
   font-size: $header-font-size;
-  height: $header-height;
   justify-content: space-between;
-  left: 0;
-  padding: 0 $padding-base;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transition: font-size .5s, height .5s;
-
-  &Scrolled {
-    composes: header;
-
-    font-size: $header-font-size-scrolled;
-    height: $header-height-scrolled;
-  }
+  padding: 2rem 1rem;
 }
 
 .logo {
-  //placeholder
+  // placeholder
 }
 
 .logoLink {
