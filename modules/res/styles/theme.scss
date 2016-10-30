@@ -78,6 +78,9 @@ pre {
 }
 
 :global {
+  .phenomic-HeadingAnchor {
+    font-family: $font-mono;
+  }
 
   h2 {
     font-size: 1.25rem;
