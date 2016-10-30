@@ -16,10 +16,10 @@ const PagePreview = ({ __url, title, date, description }) => {
         </h2>
         {
           pageDate &&
-          <div>
+          <div className={styles.info}>
             {' '}
             <time key={title}>
-              {pageDate.toLocaleDateString()}
+              {pageDate.toDateString()}
             </time>
           </div>
         }

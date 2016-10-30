@@ -2,14 +2,24 @@
 
 .header {
   align-items: center;
-  display: flex;
-  justify-content: space-between;
+}
+
+.h {
+  padding: 0;
 }
 
 .link {
-  color: $magenta;
+  color: $orange;
 }
 
 .description {
   padding: $padding-base 0;
+}
+
+.info {
+  font-size: .875rem;
+
+  &::before {
+    content: '>';
+  }
 }
