@@ -4,11 +4,7 @@
   align-items: center;
   background: $light-black;
   font-size: $header-font-size;
-  padding: 1rem;
-
-  @include respond-to($tablet-width) {
-    padding: 0 1rem;
-  }
+  padding: 0 1rem;
 }
 
 .wrapper {
@@ -25,17 +21,13 @@
 }
 
 .nav {
-  display: none;
-  flex: 1 100%;
+  display: flex;
+  flex-wrap: wrap;
   font-family: $font-mono;
   font-size: 1.1rem;
+  max-width: 100%;
   padding: 1rem 0;
   text-align: center;
-
-  @include respond-to($tablet-width) {
-    display: flex;
-    flex: 0 1 auto;
-  }
 }
 
 .navItem {
@@ -43,40 +35,6 @@
   display: block;
   padding: .5rem;
   text-transform: uppercase;
-}
-
-.navActive {
-  display: flex;
-  flex-direction: column;
-
-  @include respond-to($tablet-width) {
-    flex-direction: row;
-  }
-}
-
-.navToggle {
-  font-family: $font-mono;
-  font-size: 0;
-
-  &::before {
-    color: $magenta;
-    content: "\2662";
-    font-size: 2rem;
-  }
-
-  &Active {
-    &::before {
-      color: $cyan;
-    }
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @include respond-to($tablet-width) {
-    display: none;
-  }
 }
 
 .logoLink {
