@@ -19,16 +19,7 @@
     "id": "UA-79896656-1"
   },
   "phenomic": {
-    "CNAME": false,
-    "offline": {
-      "serviceWorker": true,
-      "appcache": true,
-      "cachePatterns": {
-        "excludes": [
-          "apps/"
-        ]
-      }
-    }
+    "CNAME": false
   },
   "babel": {
     "presets": [
