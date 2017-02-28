@@ -6,8 +6,7 @@
   "twitter": "jdinhlife",
   "repository": "",
   "scripts": {
-    "deploy": "npm run build && aws s3 sync --delete dist/ s3://jdinh-life/",
-    "deploy:uc": "npm run build && aws s3 sync --delete dist/ s3://uc-jdinh-life/",
+    "deploy": "npm run build && aws --profile jdinhlife s3 sync --delete dist/ s3://jdinh-life/",
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "sass-lint \"modules/**/*.scss\"",
     "lint": "npm-run-all --parallel lint:*",
@@ -21,7 +20,15 @@
   },
   "phenomic": {
     "CNAME": false,
-    "offline": true
+    "offline": {
+      "serviceWorker": true,
+      "appcache": true,
+      "cachePatterns": {
+        "excludes": [
+          "apps/"
+        ]
+      }
+    }
   },
   "babel": {
     "presets": [
