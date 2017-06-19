@@ -67,6 +67,8 @@ const PageList = ({ pages }) =>
         text-align: center;
         font-size: 87.5%;
         color: ${colors.comment};
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
       }
     `}</style>
   </div>
