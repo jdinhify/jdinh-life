@@ -9,7 +9,7 @@ const propTypes = {
 
 const LinkRenderer = ({href, children}) => href.match(/^(https?:)?\/\//)
   ? <a href={href} target='_blank'>
-    {children} <sup>☁</sup>
+    {children} <sup>⇗</sup>
   </a>
   : <Link href={href}><a>{children}</a></Link>
 
