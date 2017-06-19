@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Markdown from './components/markdown'
 import Header from './components/header'
-import { colors } from './config'
+import { colors, fonts } from './config'
 
 const propTypes = {
   content: PropTypes.string,
@@ -16,13 +16,19 @@ const propTypes = {
 const Page = ({ children, title = '', content = '', noHeading }) =>
   <div className='app'>
     <Header title={title} />
-    {!noHeading && <h1><span>#</span>{title}</h1>}
+    {!noHeading && <h1>{title}</h1>}
     <Markdown source={content} />
     { children }
 
     <style jsx>{`
       span {
-        font-family: Lucida Console,Monaco,monospace;
+        font-family: ${fonts.monospace};
+        padding-right: .5rem;
+      }
+
+      h1::before {
+        content: '#';
+        font-family: ${fonts.monospace};
         padding-right: .5rem;
       }
     `}</style>
@@ -34,7 +40,7 @@ const Page = ({ children, title = '', content = '', noHeading }) =>
         padding: 0;
       }
       body {
-          font-family: Verdana,Geneva,sans-serif;
+          font-family: ${fonts.normal};
           margin: 0 auto;
           padding: 1rem;
           background-color: ${colors.background};
@@ -86,7 +92,7 @@ const Page = ({ children, title = '', content = '', noHeading }) =>
       }
       code {
         background-color: #353743;
-        font-family: Lucida Console,Monaco,monospace;
+        font-family: ${fonts.monospace};
         padding: 0 .5rem;
       }
 

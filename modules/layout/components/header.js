@@ -28,7 +28,7 @@ const Header = ({ title = '' }) => (
 
     <style jsx>{`
       header {
-        padding: 2rem;
+        padding: 1rem 2rem;
         color: white;
         text-align: center;
         opacity: .8;

@@ -13,3 +13,17 @@ export const colors = {
   yellow: '#f1fa8c',
   text: '#bcc2cd',
 }
+
+export const headingFontSizes = {
+  '1': '2rem',
+  '2': '1.5rem',
+  '3': '1.17rem',
+  '4': '1rem',
+  '5': '.83rem',
+  '6': '.67rem',
+}
+
+export const fonts = {
+  normal: 'Verdana,Geneva,sans-serif',
+  monospace: 'Lucida Console,Monaco,monospace',
+}
