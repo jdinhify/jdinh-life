@@ -95,6 +95,9 @@ const Page = ({ children, title = '', content = '', noHeading }) =>
         font-family: ${fonts.monospace};
         padding: 0 .5rem;
       }
+      pre code {
+        padding: 1rem .5rem;
+      }
 
       /* Dracula Theme v1.2.5
       *

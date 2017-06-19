@@ -28,7 +28,7 @@ const PageList = ({ pages }) =>
         (page, i) =>
           <div className='entry' key={i}>
             <h2><Link prefetch href={page.link}><a>{page.title}</a></Link></h2>
-            <time>{(new Date(page.date)).toLocaleDateString('en-au', localeStringOptions)}</time>
+            {page.date ? <time>{(new Date(page.date)).toLocaleDateString('en-au', localeStringOptions)}</time> : <time>♣ ♥ ♦</time>}
             <Markdown source={page.desc} />
             <Link href={page.link}><a>Read more</a></Link>
           </div>
