@@ -1,32 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MD from 'react-markdown'
 
-import HeadingRenderer from './components/renderers/heading'
-import LinkRenderer from './components/renderers/link'
-import CodeRenderer from './components/renderers/code'
+import Markdown from './components/markdown'
 import Header from './components/header'
 import { colors } from './config'
 
 const propTypes = {
   content: PropTypes.string,
-  children: PropTypes.element,
   title: PropTypes.string,
   noHeading: PropTypes.bool,
+
+  children: PropTypes.any,
 }
 
 const Page = ({ children, title = '', content = '', noHeading }) =>
   <div className='app'>
     <Header title={title} />
     {!noHeading && <h1><span>#</span>{title}</h1>}
-    <MD
-      source={content}
-      renderers={{
-        Heading: HeadingRenderer,
-        Link: LinkRenderer,
-        CodeBlock: CodeRenderer,
-        Code: CodeRenderer,
-      }} />
+    <Markdown source={content} />
     { children }
 
     <style jsx>{`
@@ -175,6 +166,40 @@ const Page = ({ children, title = '', content = '', noHeading }) =>
       .hljs-emphasis {
         font-style: italic;
       }
+
+      /* nprogress */
+      /* Make clicks pass-through */
+      #nprogress {
+        pointer-events: none;
+      }
+
+      #nprogress .bar {
+        background: ${colors.comment};
+
+        position: fixed;
+        z-index: 1031;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 2px;
+      }
+
+      /* Fancy blur effect */
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px ${colors.comment}, 0 0 5px ${colors.comment};
+        opacity: 1.0;
+
+        -webkit-transform: rotate(3deg) translate(0px, -4px);
+            -ms-transform: rotate(3deg) translate(0px, -4px);
+                transform: rotate(3deg) translate(0px, -4px);
+      }
+
     `}</style>
   </div>
 

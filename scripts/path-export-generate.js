@@ -18,6 +18,6 @@ glob(pages, async (err, files) => {
     pathMap,
     err => err
       ? console.log(err)
-      : console.log('done')
+      : console.log('path-map exported to path-map.js')
   )
 })
