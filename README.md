@@ -1,19 +1,5 @@
-# [Phenomic](https://github.com/MoOx/phenomic) boilerplate
+[![Build Status](https://travis-ci.org/jdinhlife/jdinh-life.svg?branch=master)](https://travis-ci.org/jdinhlife/jdinh-life)
 
-## Install dependencies
+source code for [jdinh.life](https://jdinh.life).
 
-```sh
-npm install
-```
-
-## Run development server
-
-```sh
-npm start
-```
-
-## Build for production
-
-```sh
-npm run build
-```
+[Read more](https://jdinh.life/about)

@@ -1,237 +1,49 @@
 {
-  "private": true,
   "name": "jdinh.life",
   "siteName": "JD's",
   "homepage": "https://jdinh.life",
   "twitter": "jdinhlife",
-  "repository": "",
+  "repository": "git@github.com:jdinhlife/jdinh-life.git",
+  "version": "0.1.0",
   "scripts": {
-    "deploy": "npm run build && aws --profile jdinhlife s3 sync --delete dist/ s3://jdinh-life/",
-    "lint:js": "eslint --ignore-path .gitignore --fix .",
-    "lint:css": "sass-lint \"modules/**/*.scss\"",
-    "lint": "npm-run-all --parallel lint:*",
-    "start": "phenomic start",
-    "build": "phenomic build",
-    "pretest": "npm run lint",
-    "test": "npm run build"
-  },
-  "ga": {
-    "id": "UA-79896656-1"
-  },
-  "phenomic": {
-    "CNAME": false
-  },
-  "babel": {
-    "presets": [
-      "babel-preset-react",
-      "babel-preset-es2015",
-      "babel-preset-stage-1"
-    ],
-    "env": {
-      "production": {
-        "presets": [
-          "babel-preset-react-optimize"
-        ]
-      }
-    }
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "preexport": "node ./scripts/path-export-generate.js && npm run build",
+    "export": "next export"
   },
   "eslintConfig": {
-    "parser": "babel-eslint",
+    "extends": [
+      "standard",
+      "standard-react"
+    ],
     "rules": {
-      "array-bracket-spacing": [
-        1,
-        "never"
-      ],
-      "arrow-body-style": 0,
-      "arrow-parens": 0,
-      "arrow-spacing": [
-        1,
-        {
-          "before": true,
-          "after": true
-        }
-      ],
-      "brace-style": [
-        2,
-        "1tbs"
-      ],
-      "camelcase": 0,
-      "comma-dangle": 1,
-      "comma-style": 1,
-      "dot-notation": 1,
-      "eqeqeq": 2,
-      "import/extensions": [
-        1,
-        {
-          "js": "never",
-          "json": "always",
-          "scss": "always"
-        }
-      ],
-      "indent": [
-        2,
-        2,
-        {
-          "SwitchCase": 1
-        }
-      ],
-      "jsx-quotes": 1,
-      "keyword-spacing": 1,
-      "linebreak-style": [
-        2,
-        "unix"
-      ],
-      "new-cap": [
-        1,
-        {
-          "newIsCap": false
-        }
-      ],
-      "no-array-constructor": 1,
-      "no-console": 0,
-      "no-const-assign": 1,
-      "no-new-object": 1,
-      "no-nested-ternary": 1,
-      "no-param-reassign": 0,
-      "no-unneeded-ternary": 1,
-      "no-var": 1,
-      "object-curly-spacing": [
+      "comma-dangle": [
         "error",
-        "always"
-      ],
-      "one-var": 0,
-      "padded-blocks": 0,
-      "prefer-arrow-callback": 0,
-      "prefer-const": 1,
-      "prefer-template": 1,
-      "quote-props": [
-        0,
-        "as-needed"
-      ],
-      "quotes": [
-        1,
-        "single",
-        {
-          "avoidEscape": true
-        }
-      ],
-      "react/display-name": 0,
-      "react/forbid-prop-types": 0,
-      "react/jsx-boolean-value": 1,
-      "react/jsx-closing-bracket-location": 0,
-      "react/jsx-curly-spacing": 1,
-      "react/jsx-indent-props": [
-        2,
-        2
-      ],
-      "react/jsx-max-props-per-line": 0,
-      "react/jsx-no-duplicate-props": 1,
-      "react/jsx-no-literals": 1,
-      "react/jsx-no-undef": 1,
-      "react/jsx-sort-props": 0,
-      "react/jsx-uses-react": 1,
-      "react/jsx-uses-vars": 1,
-      "react/jsx-wrap-multilines": 1,
-      "react/no-danger": 1,
-      "react/no-did-mount-set-state": 1,
-      "react/no-did-update-set-state": 1,
-      "react/no-direct-mutation-state": 1,
-      "react/no-multi-comp": 0,
-      "react/no-set-state": 0,
-      "react/no-unknown-property": 1,
-      "react/prefer-es6-class": 0,
-      "react/prop-types": 1,
-      "react/react-in-jsx-scope": 1,
-      "react/self-closing-comp": 1,
-      "react/sort-comp": 1,
-      "react/sort-prop-types": 1,
-      "semi": [
-        2,
-        "never"
-      ],
-      "space-before-blocks": 1,
-      "space-in-parens": [
-        1,
-        "never"
+        "always-multiline"
       ]
-    },
-    "env": {
-      "browser": true,
-      "es6": true,
-      "mocha": true,
-      "node": true,
-      "phantomjs": true
-    },
-    "extends": "eslint:recommended",
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-    },
-    "globals": {
-      "after": false,
-      "afterEach": false,
-      "before": false,
-      "beforeEach": false,
-      "context": false,
-      "describe": false,
-      "expect": false,
-      "it": false,
-      "require": false,
-      "sinon": false,
-      "xdescribe": false,
-      "xit": false,
-      "chai": false,
-      "webkitSpeechRecognition": false,
-      "SpeechRecognition": false
-    },
-    "plugins": [
-      "import",
-      "react"
-    ]
-  },
-  "devDependencies": {
-    "babel-cli": "^6.3.17",
-    "babel-core": "^6.3.26",
-    "babel-eslint": "^6.0.0-beta.0",
-    "babel-loader": "^6.2.0",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-react-hmre": "^1.0.1",
-    "babel-preset-react-optimize": "^1.0.1",
-    "babel-preset-stage-1": "^6.3.13",
-    "css-loader": "^0.25.0",
-    "eslint": "^3.6.1",
-    "eslint-loader": "^1.3.0",
-    "eslint-plugin-import": "^1.16.0",
-    "eslint-plugin-react": "^6.3.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.9.0",
-    "history": "^2.0.0",
-    "invariant": "^2.1.1",
-    "json-loader": "^0.5.2",
-    "node-sass": "^3.10.0",
-    "npm-run-all": "^3.1.0",
-    "phenomic": "^0.16.2",
-    "postcss-browser-reporter": "^0.5.0",
-    "postcss-cssnext": "^2.4.0",
-    "postcss-loader": "^0.13.0",
-    "postcss-reporter": "^1.3.0",
-    "raw-loader": "^0.5.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-helmet": "^3.0.0",
-    "react-redux": "^4.0.0",
-    "react-router": "^2.3.0",
-    "react-svg-inline": "^1.1.0",
-    "react-topbar-progress-indicator": "^1.0.0",
-    "redux": "^3.0.0",
-    "sass-lint": "^1.9.1",
-    "sass-loader": "^4.0.2",
-    "style-loader": "^0.13.1",
-    "webpack": "^1.12.1",
-    "whatwg-fetch": "^0.11.0"
+    }
   },
   "dependencies": {
-    "react-ga": "^2.1.2"
+    "highlight.js": "^9.12.0",
+    "lodash": "^4.17.4",
+    "next": "^3.0.0-beta14",
+    "nprogress": "^0.2.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-lowlight": "^1.0.6",
+    "react-markdown": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "glob": "^7.1.2",
+    "prop-types": "^15.5.10"
   }
 }
