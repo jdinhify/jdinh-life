@@ -10,7 +10,6 @@ export default () =>
 JD
 
  - [github](https://github.com/jdinhlife)
- - [linkedin](http://linkedin.com/in/jdinhlife)
 
 
 ## Tech
