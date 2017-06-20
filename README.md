@@ -1,19 +1,3 @@
-# [Phenomic](https://github.com/MoOx/phenomic) boilerplate
+source code for [jdinh.life](https://jdinh.life).
 
-## Install dependencies
-
-```sh
-npm install
-```
-
-## Run development server
-
-```sh
-npm start
-```
-
-## Build for production
-
-```sh
-npm run build
-```
+[Read more](https://jdinh.life/about)

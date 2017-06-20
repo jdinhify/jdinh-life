@@ -1,6 +1,0 @@
-// -- Responsive queries
-// Use: @include respond-to(screen-xs) { }
-
-@mixin respond-to($breakpoint) {
-  @media only screen and (min-width: #{$breakpoint}) { @content }
-}
