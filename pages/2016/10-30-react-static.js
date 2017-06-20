@@ -2,14 +2,15 @@ import React from 'react'
 
 import Page from '../../modules/layout/main'
 
-const content = `
+export default () =>
+  <Page title='React static' date='2016-10-30'>{`
 ## New techs
 
-The old site was made using <a href="https://getgrav.org/" target="_blank">Grav</a> - a flat file CMS on PHP. While there's a lot of cool things about Grav, I was into static site generator and looking for one since quite some time ago and finally have a bit of time to dig into this.
+The old site was made using [Grav](https://getgrav.org/) - a flat file CMS on PHP. While there's a lot of cool things about Grav, I was into static site generator and looking for one since quite some time ago and finally have a bit of time to dig into this.
 
 This site was re-written using the following techs/tools:
  - Webpack
- - <a href="https://phenomic.io/" target="_blank">Phenomic</a>
+ - [Phenomic](https://phenomic.io/)
  - ReactJS & React Router for layout
  - SASS & CSS Modules
  - Markdown for content
@@ -48,6 +49,4 @@ I needed to removed so many things that I have taken for granted when using Grav
 I also enjoy making missing functionalities from scratch so I'll just try making them as the site grows.
 
 Overall, I'm quite happy with the site now.
-`
-
-export default () => <Page title='React static site' content={content} />
+  `}</Page>

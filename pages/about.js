@@ -14,7 +14,7 @@ JD
 ## Tech
 
  - [React](https://facebook.github.io/react/) via [nextjs](https://github.com/zeit/next.js/)
- - Theme ref: [dracula](https://draculatheme.com/)
+ - Theme ref: [dracula theme](https://draculatheme.com/)
 `
 
 export default () => <Page title='About this site' content={content} />

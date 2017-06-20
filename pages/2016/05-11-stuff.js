@@ -2,7 +2,11 @@ import React from 'react'
 
 import Page from '../../modules/layout/main'
 
-const content = `
+export default () =>
+  <Page title='Stuff' date='2016-05-11'>{`
+
+## Remove adjacent duplicated characters in js
+
 A simple replace regular expression to remove adjacent duplicated characters from a given string in js
 
 \`\`\`js
@@ -22,6 +26,5 @@ Explanation:
  - (.) : match one single character and capture it to \`group 1\`
  - (?=\\1) : positive look ahead, to match the results of \`group 1\` above, and not including the \`group 1\` in the results
  - /g : interate through the whole string
-`
 
-export default () => <Page title='remove adjacent duplicated characters' content={content} />
+  `}</Page>

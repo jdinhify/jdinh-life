@@ -2,7 +2,10 @@ import React from 'react'
 
 import Page from '../../modules/layout/main'
 
-const content = `
+export default () =>
+  <Page title='Stuff' date='2016-04-10'>{`
+## Remove sub-array in js
+
 Given 2 arrays, this piece of javascript filter function removes all elements of the 2nd array from the 1st array
 
 \`\`\`js
@@ -22,6 +25,4 @@ var arr3 = arr1.filter(function(item){
 });
 // arr3 is now [ 1, 3, 5, 8, 9, 10, 1, 3 ]
 \`\`\`
-`
-
-export default () => <Page title='remove sub-array' content={content} />
+  `}</Page>

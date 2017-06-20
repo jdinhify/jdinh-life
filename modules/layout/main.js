@@ -3,22 +3,25 @@ import PropTypes from 'prop-types'
 
 import Markdown from './components/markdown'
 import Header from './components/header'
+import dateFormat from '../common/utils/date-format'
 import { colors, fonts } from './config'
 
 const propTypes = {
   content: PropTypes.string,
   title: PropTypes.string,
   noHeading: PropTypes.bool,
+  date: PropTypes.string,
+  noTime: PropTypes.bool,
 
   children: PropTypes.any,
 }
 
-const Page = ({ children, title = '', content = '', noHeading }) =>
+const Page = ({ children, title = '', content = '', noHeading, date, noTime }) =>
   <div className='app'>
     <Header title={title} />
     {!noHeading && <h1>{title}</h1>}
-    <Markdown source={content} />
-    { children }
+    {noTime ? undefined : date ? <time>{dateFormat({date: (new Date(date)), format: 'mmm dd yyyy'})}</time> : <time>♣ ♥ ♦</time>}
+    {typeof children === 'string' ? <Markdown source={children} /> : children}
 
     <style jsx>{`
       span {
@@ -26,9 +29,25 @@ const Page = ({ children, title = '', content = '', noHeading }) =>
         padding-right: .5rem;
       }
 
+      h1 {
+        font-size: 1.5rem;
+        color: ${colors.purple};
+        margin-bottom: 0;
+      }
       h1::before {
         content: '#';
         font-family: ${fonts.monospace};
+        padding-right: .5rem;
+        font-size: 1.5rem;
+        color: ${colors.text};
+      }
+      time {
+        display: block;
+        font-size: 87.5%;
+        margin-bottom: 1rem;
+      }
+      time::before {
+        content: '♠';
         padding-right: .5rem;
       }
     `}</style>

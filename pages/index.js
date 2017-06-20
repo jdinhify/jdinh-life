@@ -5,15 +5,21 @@ import PageList from '../modules/layout/components/page-list'
 
 const pages = [
   {
+    title: 'React static (nextjs)',
+    desc: 'React static site with nextjs',
+    link: '/2017/06-20-nextjs',
+    date: '2017-06-20',
+  },
+  {
     title: 'React static',
     desc: 'Moved from a good CMS to react static site',
     link: '/2016/10-30-react-static',
     date: '2016-10-30',
   },
   {
-    title: 'TIL',
-    desc: 'Remove adjacent duplicated characters in javascript',
-    link: '/2016/05-11-remove-adjacent-duplicated-characters',
+    title: 'Stuff',
+    desc: ' - Remove adjacent duplicated characters in javascript',
+    link: '/2016/05-11-stuff',
     date: '2016-05-11',
   },
   {
@@ -23,9 +29,9 @@ const pages = [
     date: '2016-04-16',
   },
   {
-    title: 'TIL',
-    desc: 'Remove sub-array in javascript',
-    link: '/2016/04-10-remove-sub-array',
+    title: 'Stuff',
+    desc: ' - Remove sub-array in javascript',
+    link: '/2016/04-10-stuff',
     date: '2016-04-10',
   },
   {
@@ -36,6 +42,6 @@ const pages = [
 ]
 
 export default () =>
-  <Page title='Home' noHeading>
+  <Page title='Home' noHeading noTime>
     <PageList pages={pages} />
   </Page>

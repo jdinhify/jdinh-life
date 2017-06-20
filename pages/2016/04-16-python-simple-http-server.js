@@ -2,7 +2,8 @@ import React from 'react'
 
 import Page from '../../modules/layout/main'
 
-const content = `
+export default () =>
+  <Page title='Simple HTTP server with python' date='2016-04-16'>{`
 Sometimes it's convenient to run a very simple HTTP server just to serve web contents from your current directory.
 
 In a system with [Python](https://www.python.org/) installed (Mac OS & many Linux Distros come with Python out of the box), we can run a simple command in the current directory to serve its web content via localhost.
@@ -57,6 +58,4 @@ Then we can start serving the web content of current directory by running
 \`\`\`
 
 \`<<port>>\` is optional and set to \`3000\` by default. We can then access the web content by going to \`http://localhost:<<port>>\`
-`
-
-export default () => <Page title='Simple HTTP server with python' content={content} />
+  `}</Page>
