@@ -3,14 +3,8 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 
 import Markdown from '../components/markdown'
+import dateFormat from '../../common/utils/date-format'
 import { colors, fonts } from '../config'
-
-const localeStringOptions = {
-  weekday: 'short',
-  month: 'short',
-  year: 'numeric',
-  day: 'numeric',
-}
 
 const propTypes = {
   pages: PropTypes.arrayOf(PropTypes.shape({
@@ -28,7 +22,7 @@ const PageList = ({ pages }) =>
         (page, i) =>
           <div className='entry' key={i}>
             <h2><Link prefetch href={page.link}><a>{page.title}</a></Link></h2>
-            {page.date ? <time>{(new Date(page.date)).toLocaleDateString('en-au', localeStringOptions)}</time> : <time>♣ ♥ ♦</time>}
+            {page.date ? <time>{dateFormat({date: (new Date(page.date)), format: 'ddd, mmm dd yyyy'})}</time> : <time>♣ ♥ ♦</time>}
             <Markdown source={page.desc} />
             <Link href={page.link}><a>Read more</a></Link>
           </div>
