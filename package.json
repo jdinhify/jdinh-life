@@ -9,7 +9,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "node ./scripts/path-export-generate.js && npm run build && next export"
+    "preexport": "node ./scripts/path-export-generate.js && npm run build",
+    "export": "next export"
   },
   "eslintConfig": {
     "extends": [
