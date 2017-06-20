@@ -1,0 +1,22 @@
+language: node_js
+node_js: "8.1.0"
+script:
+  - npm run export
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    bucket: $AWS_S3_BUCKET_UC
+    local_dir: out
+    skip_cleanup: true
+    region: ap-southeast-2
+    on:
+      branch: uc
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    bucket: $AWS_S3_BUCKET
+    local_dir: out
+    skip_cleanup: true
+    region: ap-southeast-2
