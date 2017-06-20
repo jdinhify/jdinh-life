@@ -2,7 +2,9 @@ import React from 'react'
 
 import Page from '../modules/layout/main'
 
-const content = `
+export default () =>
+  <Page title='About this site'>{`
+
 ## Author
 
 JD
@@ -15,6 +17,5 @@ JD
 
  - [React](https://facebook.github.io/react/) via [nextjs](https://github.com/zeit/next.js/)
  - Theme ref: [dracula theme](https://draculatheme.com/)
-`
 
-export default () => <Page title='About this site' content={content} />
+  `}</Page>

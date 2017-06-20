@@ -50,6 +50,9 @@ const Page = ({ children, title = '', content = '', noHeading, date, noTime }) =
         content: '♠';
         padding-right: .5rem;
       }
+      .app {
+        padding-bottom: 2rem;
+      }
     `}</style>
 
     <style jsx global>{`
