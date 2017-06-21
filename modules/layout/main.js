@@ -20,7 +20,7 @@ const Page = ({ children, title = '', content = '', noHeading, date, noTime }) =
   <div className='app'>
     <Header title={title} />
     {!noHeading && <h1>{title}</h1>}
-    {noTime ? undefined : date ? <time>{dateFormat({date: (new Date(date)), format: 'mmm dd yyyy'})}</time> : <time>♣ ♥ ♦</time>}
+    {noTime ? undefined : date ? <time>{dateFormat({date: (new Date(date)), format: 'mmm dd yyyy'})}</time> : <time>♣ ♦ ♥</time>}
     {typeof children === 'string' ? <Markdown source={children} /> : children}
 
     <style jsx>{`
