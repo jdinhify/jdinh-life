@@ -3,20 +3,14 @@ node_js: "8.1.0"
 script:
   - npm run export
 
+before_deploy: pip install --user awscli
+
 deploy:
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    bucket: $AWS_S3_BUCKET_UC
-    local_dir: out
+  - provider: script
+    script: ~/.local/bin/aws s3 sync out s3://$AWS_S3_BUCKET --region=$AWS_S3_REGION --delete
     skip_cleanup: true
-    region: ap-southeast-2
+  - provider: script
+    script: ~/.local/bin/aws s3 sync out s3://$AWS_S3_BUCKET_UC --region=$AWS_S3_REGION --delete
+    skip_cleanup: true
     on:
       branch: uc
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    bucket: $AWS_S3_BUCKET
-    local_dir: out
-    skip_cleanup: true
-    region: ap-southeast-2
