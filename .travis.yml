@@ -3,14 +3,9 @@ node_js: "8.3.0"
 script:
   - npm run export
 
-before_deploy: pip install --user awscli
+before_deploy: npm i -g now
 
 deploy:
   - provider: script
-    script: ~/.local/bin/aws s3 sync out s3://$AWS_S3_BUCKET --region=$AWS_S3_REGION --delete
+    script: cd ./out && now -t $NOW_T && now -t $NOW_T alias
     skip_cleanup: true
-  - provider: script
-    script: ~/.local/bin/aws s3 sync out s3://$AWS_S3_BUCKET_UC --region=$AWS_S3_REGION --delete
-    skip_cleanup: true
-    on:
-      branch: uc
