@@ -9,5 +9,5 @@ The site is now built using [nextjs](https://github.com/zeit/next.js/) with \`ex
 ## Changes
  - nextjs with its own router & \`styled-jsx\`
  - [react-markdown](https://github.com/rexxars/react-markdown)
- - colors are based on [dracula theme](https://draculatheme.com/)
+ - colors are based on [gruvbox](https://github.com/morhetz/gruvbox)
   `}</Page>

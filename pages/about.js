@@ -15,6 +15,6 @@ JD
 ## Tech
 
  - [React](https://facebook.github.io/react/) via [nextjs](https://github.com/zeit/next.js/)
- - Theme ref: [dracula theme](https://draculatheme.com/)
+ - Theme ref: [gruvbox](https://github.com/morhetz/gruvbox)
 
   `}</Page>

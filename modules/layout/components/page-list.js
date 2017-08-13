@@ -24,7 +24,6 @@ const PageList = ({ pages }) =>
             <h2><Link prefetch href={page.link}><a>{page.title}</a></Link></h2>
             {page.date ? <time>{dateFormat({date: (new Date(page.date)), format: 'mmm dd yyyy'})}</time> : <time>♣ ♦ ♥</time>}
             <Markdown source={page.desc} />
-            <Link href={page.link}><a>Read more</a></Link>
           </div>
       )
     }

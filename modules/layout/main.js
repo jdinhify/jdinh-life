@@ -122,10 +122,10 @@ export default class Page extends React.Component {
           pre {
             padding: .5rem;
             margin-bottom: 1rem;
-            background-color: #353743;
+            background-color: ${colors.hljsbBackground};
           }
           code {
-            background-color: #353743;
+            background-color: ${colors.hljsbBackground};
             font-family: ${fonts.monospace};
             padding: 0 .5rem;
           }
@@ -153,20 +153,20 @@ export default class Page extends React.Component {
           .hljs-selector-tag,
           .hljs-section,
           .hljs-link {
-            color: #8be9fd;
+            color: ${colors.blue};
           }
 
           .hljs-keyword {
-            color: #ff79c6;
+            color: ${colors.purple};
           }
 
           .hljs,
           .hljs-subst {
-            color: #f8f8f2;
+            color: ${colors.foreground};
           }
 
           .hljs-title {
-            color: #50fa7b;
+            color: ${colors.yellow};
           }
 
           .hljs-string,
@@ -180,13 +180,13 @@ export default class Page extends React.Component {
           .hljs-variable,
           .hljs-template-tag,
           .hljs-template-variable {
-            color: #f1fa8c;
+            color: ${colors.green};
           }
 
           .hljs-comment,
           .hljs-quote,
           .hljs-deletion {
-            color: #6272a4;
+            color: ${colors.comment};
           }
 
           .hljs-keyword,
@@ -203,7 +203,7 @@ export default class Page extends React.Component {
 
           .hljs-literal,
           .hljs-number {
-            color: #bd93f9;
+            color: ${colors.cyan};
           }
 
           .hljs-emphasis {
