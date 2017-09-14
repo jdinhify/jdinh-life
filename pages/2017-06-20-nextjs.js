@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Page from '../../modules/layout/main'
+import Page from '../modules/layout/main'
 
 export default () =>
   <Page title='React static (nextjs)' date='2017-06-20'>{`

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Page from '../../modules/layout/main'
+import Page from '../modules/layout/main'
 
 export default () =>
   <Page title='Simple HTTP server with python' date='2016-04-16'>{`

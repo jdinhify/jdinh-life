@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Page from '../../modules/layout/main'
+import Page from '../modules/layout/main'
 
 export default () =>
   <Page title='Stuff' date='2016-04-10'>{`
