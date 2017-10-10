@@ -28,24 +28,24 @@
   "dependencies": {
     "highlight.js": "^9.12.0",
     "lodash": "^4.17.4",
-    "next": "^3.2.2",
+    "next": "^4.0.1",
     "nprogress": "^0.2.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-ga": "^2.2.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-ga": "^2.3.5",
     "react-lowlight": "^1.1.1",
     "react-markdown": "^2.5.0"
   },
   "devDependencies": {
-    "eslint": "^4.6.1",
+    "eslint": "^4.8.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-react": "^5.0.0",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-node": "^5.2.0",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-react": "^7.3.0",
+    "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-standard": "^3.0.1",
-    "glob": "^7.1.2",
-    "prop-types": "^15.5.10"
+    "glob": "^7.1.2"
   }
 }
