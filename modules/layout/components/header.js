@@ -23,6 +23,7 @@ const Header = ({ title = '' }) => (
       <meta charSet='utf-8' />
       <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      <meta name='google-site-verification' content='Cs5EM6TQjEW58xRCZJacWN_W_3YJ6XLA4p7pur3RdZU' />
       <title>{title} | JD's</title>
     </Head>
 
