@@ -133,17 +133,6 @@ export default class Page extends React.Component {
             padding: 1rem .5rem;
           }
 
-          /* Dracula Theme v1.2.5
-          *
-          * https://github.com/dracula/highlightjs
-          *
-          * Copyright 2016-present, All rights reserved
-          *
-          * Code licensed under the MIT license
-          *
-          * @author Denis Ciccale <dciccale@gmail.com>
-          * @author Zeno Rocha <hi@zenorocha.com>
-          */
           .hljs {
             display: block;
             overflow-x: auto;
