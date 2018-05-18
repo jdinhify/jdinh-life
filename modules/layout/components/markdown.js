@@ -14,10 +14,9 @@ const Markdown = ({ source }) =>
   <MD
     source={source}
     renderers={{
-      Heading: HeadingRenderer,
-      Link: LinkRenderer,
-      CodeBlock: CodeRenderer,
-      Code: CodeRenderer,
+      heading: HeadingRenderer,
+      link: LinkRenderer,
+      code: CodeRenderer,
     }} />
 
 Markdown.propTypes = propTypes

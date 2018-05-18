@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import kebabCase from 'lodash/kebabCase'
 
 import { headingFontSizes, fonts } from '../../config'
 
@@ -8,6 +7,8 @@ const propTypes = {
   level: PropTypes.number,
   children: PropTypes.any,
 }
+
+const kebabCase = string => string.replace(/([a-z])([A-Z])/g, '$1-$2').replace(/\s+/g, '-').toLowerCase()
 
 const HeadingRenderer = ({ level, children }) => {
   const Tag = `h${level}`

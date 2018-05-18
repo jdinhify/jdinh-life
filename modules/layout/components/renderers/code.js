@@ -10,16 +10,20 @@ Lowlight.registerLanguage('bash', bash)
 
 const propTypes = {
   language: PropTypes.string,
-  literal: PropTypes.string,
-  inline: PropTypes.bool,
+  value: PropTypes.string,
 }
 
-const CodeRenderer = ({ language, literal, inline }) =>
+const defaultProps = {
+  language: 'js',
+  value: '',
+}
+
+const CodeRenderer = ({ language, value }) =>
   <Lowlight
-    language={language || 'js'}
-    value={literal}
-    inline={inline} />
+    language={language}
+    value={value} />
 
 CodeRenderer.propTypes = propTypes
+CodeRenderer.defaultProps = defaultProps
 
 export default CodeRenderer

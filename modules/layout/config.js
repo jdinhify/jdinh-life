@@ -24,6 +24,6 @@ export const headingFontSizes = {
 }
 
 export const fonts = {
-  normal: 'Verdana,Geneva,sans-serif',
-  monospace: 'Lucida Console,Monaco,monospace',
+  normal: 'Inconsolata,sans-serif',
+  monospace: 'Inconsolata,monospace',
 }

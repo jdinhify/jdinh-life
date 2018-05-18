@@ -35,39 +35,9 @@ export default class Page extends React.Component {
         {noTime ? undefined : date ? <time>{dateFormat({date: (new Date(date)), format: 'mmm dd yyyy'})}</time> : <time>♣ ♦ ♥</time>}
         {typeof children === 'string' ? <Markdown source={children} /> : children}
 
-        <style jsx>{`
-          span {
-            font-family: ${fonts.monospace};
-            padding-right: .5rem;
-          }
-
-          h1 {
-            font-size: 1.5rem;
-            color: ${colors.purple};
-            margin-bottom: 0;
-          }
-          h1::before {
-            content: '#';
-            font-family: ${fonts.monospace};
-            padding-right: .5rem;
-            font-size: 1.5rem;
-            color: ${colors.text};
-          }
-          time {
-            display: block;
-            font-size: 87.5%;
-            margin-bottom: 1rem;
-          }
-          time::before {
-            content: '♠';
-            padding-right: .5rem;
-          }
-          .app {
-            padding-bottom: 2rem;
-          }
-        `}</style>
-
         <style jsx global>{`
+          @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
           * {
             box-sizing: border-box;
             margin: 0;
@@ -78,11 +48,10 @@ export default class Page extends React.Component {
               margin: 0 auto;
               padding: 1rem;
               background-color: ${colors.background};
-              max-width: 1040px;
+              max-width: 65rem;
               color: ${colors.text};
               line-height: 1.4;
-              font-size: 100%;
-              text-rendering: geometricPrecision;
+              font-size: 112.5%;
           }
           h1,
           h2,
@@ -120,17 +89,14 @@ export default class Page extends React.Component {
             color: ${colors.orange};
           }
           pre {
-            padding: .5rem;
-            margin-bottom: 1rem;
+            padding: 1rem;
+            margin: 1rem 0;
             background-color: ${colors.hljsbBackground};
           }
           code {
             background-color: ${colors.hljsbBackground};
             font-family: ${fonts.monospace};
             padding: 0 .5rem;
-          }
-          pre code {
-            padding: 1rem .5rem;
           }
 
           .hljs {
@@ -214,24 +180,56 @@ export default class Page extends React.Component {
             left: 0;
 
             width: 100%;
-            height: 2px;
+            height: .125rem;
           }
 
           /* Fancy blur effect */
           #nprogress .peg {
             display: block;
             position: absolute;
-            right: 0px;
-            width: 100px;
+            right: 0;
+            width: 6.25rem;
             height: 100%;
-            box-shadow: 0 0 10px ${colors.comment}, 0 0 5px ${colors.comment};
+            box-shadow: 0 0 .625rem ${colors.comment}, 0 0 .3125rem ${colors.comment};
             opacity: 1.0;
 
-            -webkit-transform: rotate(3deg) translate(0px, -4px);
-                -ms-transform: rotate(3deg) translate(0px, -4px);
-                    transform: rotate(3deg) translate(0px, -4px);
+            -webkit-transform: rotate(3deg) translate(0, -.25rem);
+                -ms-transform: rotate(3deg) translate(0, -.25rem);
+                    transform: rotate(3deg) translate(0, -.25rem);
           }
 
+        `}</style>
+
+        <style jsx>{`
+          span {
+            font-family: ${fonts.monospace};
+            padding-right: .5rem;
+          }
+
+          h1 {
+            font-size: 1.5rem;
+            color: ${colors.purple};
+            margin-bottom: 0;
+          }
+          h1::before {
+            content: '#';
+            font-family: ${fonts.monospace};
+            padding-right: .5rem;
+            font-size: 1.5rem;
+            color: ${colors.text};
+          }
+          time {
+            display: block;
+            font-size: 87.5%;
+            margin-bottom: 1rem;
+          }
+          time::before {
+            content: '♠';
+            padding-right: .5rem;
+          }
+          .app {
+            padding-bottom: 2rem;
+          }
         `}</style>
       </div>
     )
