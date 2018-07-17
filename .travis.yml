@@ -9,5 +9,5 @@ script:
 
 deploy:
   - provider: script
-    script: npx now -t $NOW_T ./out && npx now -t $NOW_T alias
+    script: npx now --public -t $NOW_T ./out && npx now -t $NOW_T alias
     skip_cleanup: true
