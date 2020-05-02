@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+
+hash docker 2>/dev/null || die "missing dep: docker"
+
+docker build -t jdinh-life . || die "cant build"
+
+docker run --rm \
+  -v $(pwd):/app \
+  -v /app/node_modules \
+  -w /app \
+  -e "NOW_TOKEN=${NOW_TOKEN:-''}" \
+  -e "NOW_ORG_ID=${NOW_ORG_ID:-''}" \
+  -e "NOW_PROJECT_ID=${NOW_PROJECT_ID:-''}" \
+  -i jdinh-life \
+  /bin/bash -c "$@"

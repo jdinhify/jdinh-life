@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+
+./ops/bin/env "npm run eslint:ci"

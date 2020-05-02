@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+
+./ops/bin/env "npx now --token=${NOW_TOKEN} --prod --confirm public"
