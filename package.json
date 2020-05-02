@@ -1,52 +1,42 @@
 {
   "name": "jdinh.life",
-  "siteName": "JD's",
+  "siteName": "JD's site",
   "homepage": "https://jdinh.life",
-  "twitter": "jdinhify",
   "repository": "git@github.com:jdinhify/jdinh-life.git",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "dependencies": {
+    "@mdx-js/mdx": "1.6.0",
+    "@mdx-js/react": "1.6.0",
+    "@theme-ui/prism": "^0.3.0",
+    "gatsby": "2.21.0",
+    "gatsby-plugin-google-analytics": "^2.3.0",
+    "gatsby-plugin-manifest": "2.4.0",
+    "gatsby-plugin-mdx": "1.2.0",
+    "gatsby-plugin-offline": "3.2.0",
+    "gatsby-plugin-react-helmet": "3.3.0",
+    "gatsby-plugin-theme-ui": "0.3.0",
+    "gatsby-source-filesystem": "2.3.0",
+    "prop-types": "15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-helmet": "6.0.0",
+    "remark-slug": "6.0.0",
+    "theme-ui": "0.3.1"
+  },
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "build": "NODE_ENV=production next build",
-    "start": "next start",
-    "preexport": "npm run build",
-    "export": "NODE_ENV=production next export",
-    "postexport": "cp now.json ./out"
-  },
-  "eslintConfig": {
-    "extends": [
-      "standard",
-      "standard-react"
-    ],
-    "rules": {
-      "comma-dangle": [
-        "error",
-        "always-multiline"
-      ]
-    }
-  },
-  "dependencies": {
-    "highlight.js": "^9.12.0",
-    "next": "^6.0.3",
-    "nprogress": "^0.2.0",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-ga": "^2.5.2",
-    "react-lowlight": "^2.0.0",
-    "react-markdown": "^3.3.2"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-config-standard-react": "^6.0.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-react": "^7.8.2",
-    "eslint-plugin-standard": "^3.1.0",
-    "glob": "^7.1.2",
-    "now": "^11.1.12"
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-mdx": "^1.6.9",
+    "eslint-plugin-prettier": "3.1.3",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "3.0.0",
+    "prettier": "2.0.5"
   }
 }
