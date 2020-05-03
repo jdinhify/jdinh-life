@@ -1,8 +1,9 @@
 import React from 'react'
 import { colors, heading } from '../gatsby-plugin-theme-ui/styles'
 import { Link as GatsbyLink } from 'gatsby'
-import { Box, Heading, Text, Link } from 'theme-ui'
+import { Box, Heading, Link } from 'theme-ui'
 import { formatDate } from '../libs/format-date'
+import { SEO } from './seo'
 
 const socialLinkStyle = {
   color: colors.foreground,
@@ -84,10 +85,20 @@ const GitHub = () => (
 
 const Layout = ({
   children,
-  pageContext: { frontmatter: { title, date } = {} } = {},
+  pageContext: {
+    frontmatter: {
+      title,
+      published,
+      keywords,
+      description,
+      showTitle = true,
+    } = {},
+  } = {},
 }) => (
   <>
+    <SEO title={title} keywords={keywords} description={description} />
     <Box
+      as="header"
       sx={{
         paddingBottom: '2rem',
         textAlign: 'center',
@@ -106,13 +117,13 @@ const Layout = ({
     >
       <GatsbyLink to="/">{"JD's"}</GatsbyLink>
     </Box>
-    {title && (
-      <>
+    {showTitle && (
+      <Box sx={{ marginBottom: '3rem' }}>
         <Heading
           as="h1"
           sx={{
             ...heading,
-            marginBottom: 0,
+            margin: 0,
             color: colors.orange,
             '> span': {
               color: colors.foreground,
@@ -122,20 +133,23 @@ const Layout = ({
           <span>#</span>
           {title}
         </Heading>
-        <Text
-          sx={{
-            fontSize: '14px',
-            marginBottom: '1rem',
-          }}
-        >
-          {date
-            ? formatDate({ date: new Date(date), format: 'mmm dd yyyy' })
-            : '♠ ♣ ♦ ♥'}
-        </Text>
-      </>
+        {published ? (
+          <Box
+            as="time"
+            itemProp="datePublished"
+            dateTime={published}
+            sx={{ display: 'block', fontSize: '16px' }}
+          >
+            {formatDate({ date: new Date(published), format: 'mmm dd, yyyy' })}
+          </Box>
+        ) : (
+          <Box sx={{ fontSize: '16px' }}>♠ ♣ ♦ ♥</Box>
+        )}
+      </Box>
     )}
     {children}
     <Box
+      as="footer"
       sx={{
         display: 'flex',
         alignItems: 'center',

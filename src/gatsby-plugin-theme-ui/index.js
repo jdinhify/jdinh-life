@@ -11,7 +11,7 @@ export default {
       fontWeight: 400,
       lineHeight: 1.5,
       fontSize: '112.5%',
-      maxWidth: '65rem',
+      maxWidth: '52rem',
       margin: '0 auto',
       padding: '1rem',
       a: link,
@@ -34,7 +34,6 @@ export default {
     h6: {
       ...heading,
     },
-    a: link,
     blockquote: {
       margin: '1rem 2rem',
       borderLeft: `.25rem dotted ${colors.purple}`,
@@ -60,6 +59,11 @@ export default {
     },
     p: {
       marginBottom: '1.5rem',
+    },
+    hr: {
+      border: 0,
+      borderTop: `1px dashed ${colors.comment}`,
+      margin: '3rem 0',
     },
   },
 }

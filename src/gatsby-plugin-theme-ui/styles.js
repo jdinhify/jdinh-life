@@ -79,7 +79,7 @@ export const heading = {
   fontFamily: fonts.normal,
   fontWeight: 400,
   display: 'inline-block',
-  margin: '.5em 0',
+  margin: '1.5em 0 1em 0',
   '> a, > span': {
     paddingRight: '.25em',
   },
