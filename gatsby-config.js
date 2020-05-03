@@ -27,6 +27,12 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: '#d79921',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-165287314-1',
