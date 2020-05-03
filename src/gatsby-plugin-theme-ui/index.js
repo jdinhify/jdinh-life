@@ -9,79 +9,53 @@ export default {
     root: {
       fontFamily: fonts.normal,
       fontWeight: 400,
-      lineHeight: 1.5,
+      lineHeight: 1.55,
       fontSize: '112.5%',
       maxWidth: '52rem',
       margin: '0 auto',
       padding: '1rem',
       a: link,
+      'h1, h2, h3, h4, h5, h6': heading,
       h1: {
-        fontWeight: 400,
+        fontSize: '1.77em',
       },
-      h2: {
-        fontWeight: 400,
+      blockquote: {
+        margin: '1rem 2rem',
+        borderLeft: `.33rem dotted ${colors.purple}`,
+        paddingLeft: '.55rem',
+        color: colors.orange,
       },
-      h3: {
-        fontWeight: 400,
+      pre: {
+        ...prismGruvbox,
+        padding: '1rem',
+        margin: '1.55rem 0',
+        fontFamily: fonts.monospace,
+        overflowX: 'auto',
+        whiteSpace: 'pre-wrap',
       },
-      h4: {
-        fontWeight: 400,
+      code: {
+        ...prismGruvbox,
+        fontFamily: fonts.monospace,
+        padding: '0 .55rem',
       },
-      h5: {
-        fontWeight: 400,
+      ul: {
+        paddingLeft: '2.55rem',
       },
-      h6: {
-        fontWeight: 400,
+      ol: {
+        paddingLeft: '2.55rem',
       },
-    },
-    h1: {
-      ...heading,
-    },
-    h2: {
-      ...heading,
-    },
-    h3: {
-      ...heading,
-    },
-    h4: {
-      ...heading,
-    },
-    h5: {
-      ...heading,
-    },
-    h6: {
-      ...heading,
-    },
-    blockquote: {
-      margin: '1rem 2rem',
-      borderLeft: `.25rem dotted ${colors.purple}`,
-      paddingLeft: '.5rem',
-      color: colors.orange,
-    },
-    pre: {
-      padding: '1rem',
-      margin: '1rem 0',
-      fontFamily: fonts.monospace,
-      overflowX: 'auto',
-      whiteSpace: 'pre-wrap',
-      ...prismGruvbox,
-    },
-    ul: {
-      paddingLeft: '2.5rem',
-    },
-    ol: {
-      paddingLeft: '2.5rem',
-    },
-    li: {
-      marginBottom: '0.75rem',
-    },
-    p: {
-      marginBottom: '1.5rem',
-    },
-    hr: {
-      border: 0,
-      borderTop: `1px dashed ${colors.comment}`,
-      margin: '3rem 0',
+      li: {
+        marginBottom: '0.77rem',
+      },
+      p: {
+        lineHeight: 1.7,
+        marginBottom: '1.55rem',
+      },
+      hr: {
+        border: 0,
+        borderTop: `1px dashed ${colors.comment}`,
+        margin: '3rem 0',
+      },
     },
   },
 }

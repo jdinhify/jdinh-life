@@ -56,8 +56,9 @@ export const prismGruvbox = {
 }
 
 export const fonts = {
-  normal: 'Inconsolata,sans-serif',
-  monospace: 'Inconsolata,monospace',
+  normal: 'Montserrat, sans-serif',
+  heading: 'Montserrat, sans-serif',
+  monospace: 'Inconsolata, monospace',
 }
 
 export const link = {
@@ -68,7 +69,7 @@ export const link = {
     color: colors.orange,
   },
   ':visited': {
-    color: colors.purple,
+    color: colors.blue,
     ':hover': {
       color: colors.orange,
     },
@@ -76,7 +77,8 @@ export const link = {
 }
 
 export const heading = {
-  fontFamily: fonts.normal,
+  fontFamily: fonts.heading,
+  fontWeight: 400,
   display: 'inline-block',
   margin: '1.5em 0 1em 0',
   '> a, > span': {

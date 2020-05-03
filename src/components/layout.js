@@ -1,5 +1,5 @@
 import React from 'react'
-import { colors, heading } from '../gatsby-plugin-theme-ui/styles'
+import { colors, heading, fonts } from '../gatsby-plugin-theme-ui/styles'
 import { Link as GatsbyLink } from 'gatsby'
 import { Box, Heading, Link } from 'theme-ui'
 import { formatDate } from '../libs/format-date'
@@ -104,14 +104,14 @@ const Layout = ({
         textAlign: 'center',
         opacity: '.8',
         '> a': {
+          fontFamily: fonts.monospace,
           fontSize: '2rem',
           textDecoration: 'none',
-          color: colors.green,
+          color: colors.orange,
           letterSpacing: '5px',
-          fontWeight: 500,
         },
         '> a:visited': {
-          color: colors.green,
+          color: colors.orange,
         },
       }}
     >
@@ -138,12 +138,12 @@ const Layout = ({
             as="time"
             itemProp="datePublished"
             dateTime={published}
-            sx={{ display: 'block', fontSize: '16px' }}
+            sx={{ display: 'block', fontSize: '14px' }}
           >
             {formatDate({ date: new Date(published), format: 'mmm dd, yyyy' })}
           </Box>
         ) : (
-          <Box sx={{ fontSize: '16px' }}>♠ ♣ ♦ ♥</Box>
+          <Box sx={{ fontSize: '14px' }}>♠ ♣ ♦ ♥</Box>
         )}
       </Box>
     )}
@@ -157,7 +157,7 @@ const Layout = ({
         paddingTop: '3rem',
       }}
     >
-      <div>Made by JD</div>
+      <div>JD © {new Date().getFullYear()}</div>
       <Box sx={{ display: 'flex' }}>
         <Twitter />
         <LinkedIn />

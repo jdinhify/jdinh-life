@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
-import { Box } from 'theme-ui'
+import { Box, Heading } from 'theme-ui'
+import { heading } from '../gatsby-plugin-theme-ui/styles'
 
 export const PostList = ({ limit }) => {
   const data = useStaticQuery(graphql`
@@ -39,11 +40,11 @@ export const PostList = ({ limit }) => {
           }) => {
             const link = `${relativePath.replace(new RegExp(`${ext}$`), '')}`
             return (
-              <Box key={id} sx={{ paddingBottom: '1.5rem' }}>
-                <h3>
+              <Box key={id} sx={{ paddingBottom: '1.55rem' }}>
+                <Heading as="h3" sx={{ ...heading, margin: 0 }}>
                   <Link to={link}>{title}</Link>
-                </h3>
-                <Box sx={{ fontSize: '16px' }}>{published}</Box>
+                </Heading>
+                <Box sx={{ fontSize: '14px' }}>{published}</Box>
                 <Box sx={{ fontSize: '16px' }}>{description}</Box>
               </Box>
             )
