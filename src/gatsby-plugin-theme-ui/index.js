@@ -15,6 +15,24 @@ export default {
       margin: '0 auto',
       padding: '1rem',
       a: link,
+      h1: {
+        fontWeight: 400,
+      },
+      h2: {
+        fontWeight: 400,
+      },
+      h3: {
+        fontWeight: 400,
+      },
+      h4: {
+        fontWeight: 400,
+      },
+      h5: {
+        fontWeight: 400,
+      },
+      h6: {
+        fontWeight: 400,
+      },
     },
     h1: {
       ...heading,

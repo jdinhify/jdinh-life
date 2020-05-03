@@ -77,7 +77,6 @@ export const link = {
 
 export const heading = {
   fontFamily: fonts.normal,
-  fontWeight: 400,
   display: 'inline-block',
   margin: '1.5em 0 1em 0',
   '> a, > span': {
