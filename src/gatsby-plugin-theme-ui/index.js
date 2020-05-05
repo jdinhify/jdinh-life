@@ -20,10 +20,10 @@ export default {
         fontSize: '1.77em',
       },
       blockquote: {
-        margin: '1rem 2rem',
-        borderLeft: `.33rem dotted ${colors.purple}`,
-        paddingLeft: '.55rem',
-        color: colors.orange,
+        margin: '1rem',
+        borderLeft: `.22rem dotted ${colors.purple}`,
+        paddingLeft: '1.55rem',
+        color: colors.yellow,
       },
       pre: {
         ...prismGruvbox,

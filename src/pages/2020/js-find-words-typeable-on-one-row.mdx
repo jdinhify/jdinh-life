@@ -1,0 +1,98 @@
+---
+title: JavaScript - find words that can be typed on one keyboard row
+description: Example usage of array methods `some`, `every`, `filter`
+published: 2020-05-04
+type: post
+keywords:
+  - JavaScript
+  - array
+  - filter
+  - some
+  - every
+---
+
+Solutions to [@cassidoo](https://twitter.com/cassidoo)'s code exercise in [her newsletter](https://buttondown.email/cassidoo/archive/when-you-arise-in-the-morning-think-of-what-a/)
+
+> Given an array of words, return the words that can be typed using letters of only one row on a keyboard.
+
+## Tradidional for loops
+
+```js
+const keyboardLayout = {
+  ansi: [
+    '`1234567890-=~!@#$%^&*()_+',
+    'qwertyuiop[]\\{}|',
+    `asdfghjkl;':"`,
+    'zxcvbnm,./<>?',
+  ],
+  dvorak: [
+    '`1234567890[]~!@#$%^&*(){}',
+    `'",<.>pyfgcrl?/+=|\\`,
+    'aoeuidhtns-_',
+    ':;qjkxbmwvz',
+  ],
+  // fill more keyboard layouts here
+}
+
+const oneRow = (wordList, layout = 'ansi') => {
+  const result = []
+
+  for (let i = 0; i < wordList.length; i += 1) {
+    const word = wordList[i]
+
+    for (let j = 0; j < keyboardLayout[layout].length; j += 1) {
+      let isOnOneRow = true
+      for (let k = 0; k < word.length; k += 1) {
+        if (!keyboardLayout[layout][j].includes(word[k])) {
+          isOnOneRow = false
+          break
+        }
+      }
+
+      if (isOnOneRow) {
+        result.push(word)
+        break
+      }
+    }
+  }
+
+  return result
+}
+
+oneRow(['candy', 'doodle', 'pop', 'shield', 'lag', 'typewriter'])
+// ['pop', 'lag', 'typewriter']
+```
+
+## Using array methods
+
+```js
+const keyboardLayout = {
+  ansi: [
+    '`1234567890-=~!@#$%^&*()_+',
+    'qwertyuiop[]\\{}|',
+    `asdfghjkl;':"`,
+    'zxcvbnm,./<>?',
+  ],
+  dvorak: [
+    '`1234567890[]~!@#$%^&*(){}',
+    `'",<.>pyfgcrl?/+=|\\`,
+    'aoeuidhtns-_',
+    ':;qjkxbmwvz',
+  ],
+  // fill more keyboard layouts here
+}
+
+const isTypeableOnOneRow = (layout) => (word) => {
+  const characters = word.toLowerCase().split('')
+
+  return keyboardLayout[layout.toLowerCase()].some((row) =>
+    characters.every((character) => row.includes(character))
+  )
+}
+
+const oneRow = (wordList, layout = 'ansi') =>
+  wordList.filter(isTypeableOnOneRow(layout))
+
+oneRow(['candy', 'doodle', 'pop', 'shield', 'lag', 'typewriter'])
+// ['pop', 'lag', 'typewriter']
+```

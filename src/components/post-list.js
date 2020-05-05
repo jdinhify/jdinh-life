@@ -48,7 +48,7 @@ export const PostList = ({ limit }) => {
                 <Box sx={{ fontSize: '16px' }}>{description}</Box>
               </Box>
             )
-          },
+          }
         )}
     </>
   )
