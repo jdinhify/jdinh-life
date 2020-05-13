@@ -2,29 +2,32 @@ name: build-deploy
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   pull_request:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: lint
-      run: |
-        ops/bin/lint
-    - name: build
-      run: |
-        ops/bin/build
-    - name: deploy
-      if: github.ref == 'refs/heads/master'
-      env:
-        NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
-        NOW_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
-        NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
-      run: |
-        ops/bin/deploy
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm ci
+      - run: npm run eslint:ci
+      - run: npm run build
+      - name: deploy
+        if: github.ref == 'refs/heads/master'
+        env:
+          NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
+          NOW_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
+          NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
+        run: npx now --token=${NOW_TOKEN} --prod --confirm public
