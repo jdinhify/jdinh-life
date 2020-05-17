@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
+import favicon from '../images/favicon.png'
 
 export const SEO = ({ description, lang, meta, keywords, title }) => {
   const data = useStaticQuery(detailsQuery)
@@ -57,7 +58,9 @@ export const SEO = ({ description, lang, meta, keywords, title }) => {
             : []
         )
         .concat(meta)}
-    />
+    >
+      <link rel="icon" href={favicon} />
+    </Helmet>
   )
 }
 

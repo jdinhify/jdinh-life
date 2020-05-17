@@ -38,18 +38,6 @@ module.exports = {
         trackingId: 'UA-165287314-1',
       },
     },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: "JD's site",
-        short_name: "JD's",
-        start_url: '/',
-        background_color: '#282828',
-        theme_color: '#ebdbb2',
-        icon: 'src/images/icon.png',
-        cache_busting_mode: 'none',
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
