@@ -38,7 +38,7 @@ export const PostList = ({ limit }) => {
             frontmatter: { description, published, title },
             parent: { relativePath, ext },
           }) => {
-            const link = `${relativePath.replace(new RegExp(`${ext}$`), '')}`
+            const link = `/${relativePath.replace(new RegExp(`${ext}$`), '')}`
             return (
               <Box key={id} sx={{ paddingBottom: '1.55rem' }}>
                 <Heading as="h3" sx={{ ...heading, margin: 0 }}>

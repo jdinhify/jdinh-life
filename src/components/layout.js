@@ -104,7 +104,7 @@ const Layout = ({
         textAlign: 'center',
         opacity: '.8',
         '> a': {
-          fontFamily: fonts.monospace,
+          fontFamily: fonts.heading,
           fontSize: '2rem',
           textDecoration: 'none',
           color: colors.orange,

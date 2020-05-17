@@ -58,7 +58,7 @@ export const prismGruvbox = {
 export const fonts = {
   normal: 'Montserrat, sans-serif',
   heading: 'Montserrat, sans-serif',
-  monospace: 'Inconsolata, monospace',
+  monospace: '"Lucida Console", Monaco, monospace',
 }
 
 export const link = {
