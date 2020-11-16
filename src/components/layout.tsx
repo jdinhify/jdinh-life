@@ -96,30 +96,32 @@ export const Layout: FC<{
       description={metadata.description}
     />
     <header>
-      <Link href="/">
-        <a>{"JD's"}</a>
-      </Link>
-    </header>
-    {!metadata?.hideTitle && (
-      <div className="title-container">
-        <h1>
-          <span>#</span>
-          {metadata?.title}
-        </h1>
-        <div className="time-container">
-          {metadata?.published ? (
-            <time itemProp="datePublished" dateTime={metadata.published}>
-              {formatDate({
-                date: new Date(metadata.published),
-                format: 'mmm dd, yyyy',
-              })}
-            </time>
-          ) : (
-            <span>♠ ♣ ♦ ♥</span>
-          )}
+      <nav>
+        <Link href="/">
+          <a>{"JD's"}</a>
+        </Link>
+      </nav>
+      {!metadata?.hideTitle && (
+        <div className="title-container">
+          <h1>
+            <span>#</span>
+            {metadata?.title}
+          </h1>
+          <div className="time-container">
+            {metadata?.published ? (
+              <time itemProp="datePublished" dateTime={metadata.published}>
+                {formatDate({
+                  date: new Date(metadata.published),
+                  format: 'mmm dd, yyyy',
+                })}
+              </time>
+            ) : (
+              <span>♠ ♣ ♦ ♥</span>
+            )}
+          </div>
         </div>
-      </div>
-    )}
+      )}
+    </header>
     {children}
     <footer>
       <div>JD © {new Date().getFullYear()}</div>
@@ -131,19 +133,19 @@ export const Layout: FC<{
     </footer>
 
     <style jsx>{`
-      header {
+      nav {
         padding-bottom: 2rem;
         text-align: center;
         opacity: 0.8;
       }
-      header > a {
+      nav > a {
         font-size: 2rem;
         font-family: var(--font-heading);
         text-decoration: none;
         color: var(--color-orange);
         letter-spacing: 5px;
       }
-      header > a:visited {
+      nav > a:visited {
         color: var(--color-orange);
       }
 
