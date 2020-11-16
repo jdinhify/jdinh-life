@@ -1,15 +1,9 @@
----
-title: JavaScript - find words that can be typed on one keyboard row
-description: Example usage of array methods `some`, `every`, `filter`
-published: 2020-05-04
-type: post
-keywords:
-  - JavaScript
-  - array
-  - filter
-  - some
-  - every
----
+export const metadata = {
+  title: 'JavaScript - find words that can be typed on one keyboard row',
+  description: 'Example usage of array methods `some`, `every`, `filter`',
+  keywords: ['javascript', 'array', 'filter', 'some', 'every'],
+  published: '2020-05-04',
+}
 
 Solutions to [@cassidoo](https://twitter.com/cassidoo)'s code exercise in [her newsletter](https://buttondown.email/cassidoo/archive/when-you-arise-in-the-morning-think-of-what-a/)
 
@@ -86,7 +80,7 @@ const isTypeableOnOneRow = (layout) => (word) => {
   const characters = word.toLowerCase().split('')
 
   return keyboardLayout[layout.toLowerCase()].some((row) =>
-    characters.every((character) => row.includes(character))
+    characters.every((character) => row.includes(character)),
   )
 }
 

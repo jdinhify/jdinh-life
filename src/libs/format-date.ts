@@ -40,5 +40,5 @@ const formats = {
 
 export const formatDate = ({ date, format }) =>
   format.replace(/(yyyy|yy|mmmm|mmm|mm|m|dddd|ddd|dd|hh|ss|a\/p)/gi, (val) =>
-    formats[val](date)
+    formats[val](date),
   )

@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+:root {
+  --color-code-background: #1d2021;
+  --color-background: #282828;
+  --color-foreground: #ebdbb2;
+  --color-selection: #32302f;
+  --color-comment: #928374;
+  --color-blue: #83a598;
+  --color-cyan: #689d6a;
+  --color-green: #98971a;
+  --color-orange: #d65d0e;
+  --color-purple: #b16286;
+  --color-red: #cc241d;
+  --color-yellow: #d79921;
+  --color-text: #d5c4a1;
+  --font-heading: Montserrat, sans-serif;
+  --font-normal: Montserrat, sans-serif;
+  --font-monospace: 'Lucida Console', Monaco, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-normal);
+  font-weight: 400;
+  line-height: 1.55;
+  font-size: 112.5%;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+a {
+  color: var(--color-cyan);
+  transition: color 0.5s ease;
+  text-decoration: none;
+}
+a:visited {
+  color: var(--color-blue);
+}
+a:hover {
+  color: var(--color-orange);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  margin: 1.5em 0 1em 0;
+  display: inline-block;
+}
+h1 {
+  font-size: 1.77em;
+}
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a,
+h1 > span,
+h2 > span,
+h3 > span,
+h4 > span,
+h5 > span,
+h6 > span {
+  padding-right: 0.25em;
+}
+
+blockquote {
+  margin: 1rem;
+  border-left: 0.22rem dotted var(--color-purple);
+  padding-left: 1.55rem;
+  color: var(--color-yellow);
+}
+
+code {
+  font-family: var(--font-monospace);
+  padding: 0 0.55rem;
+  color: var(--color-foreground);
+  background-color: var(--color-code-background);
+}
+
+pre {
+  padding: 1rem;
+  margin: 1.55rem 0;
+  font-family: var(--font-monospace);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  color: var(--color-foreground);
+  background-color: var(--color-code-background);
+}
+
+pre .changed,
+pre .punctuation {
+  color: var(--color-blue);
+}
+pre .insert,
+pre .attr-name,
+pre .string,
+pre .url {
+  color: var(--color-green);
+}
+pre .tag,
+pre .operator,
+pre .keyword,
+pre .deleted {
+  color: var(--color-red);
+}
+pre .comment {
+  color: var(--color-comment);
+}
+pre .number,
+pre .selector,
+pre .doctype {
+  color: var(--color-purple);
+}
+pre .builtin,
+pre .char,
+pre .export,
+pre .constant,
+pre .function,
+pre .class-name {
+  color: var(--color-yellow);
+}
+pre .property {
+  color: var(--color-cyan);
+}
+
+ul,
+ol {
+  padding-left: 2.55rem;
+}
+li {
+  margin-bottom: 0.77rem;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1.55rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dashed var(--color-comment);
+  margin: 3rem 0;
+}

@@ -1,14 +1,14 @@
 import React from 'react'
-import { Link as GatsbyLink } from 'gatsby'
+import NextLink from 'next/link'
 
 const isExternalLink = (href) =>
   href ? /^((https?:)?\/\/|mailto:|tel:)/.test(href) : true
 
-const isGatsbyInternal = (href) => (href ? /^\/(?!\/)/.test(href) : true)
+const isNextInternal = (href) => (href ? /^\/(?!\/)/.test(href) : true)
 
 export const Link = ({ href, children }) => {
-  if (isGatsbyInternal(href)) {
-    return <GatsbyLink to={href}>{children}</GatsbyLink>
+  if (isNextInternal(href)) {
+    return <NextLink href={href}>{children}</NextLink>
   }
 
   return isExternalLink(href) ? (

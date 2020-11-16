@@ -1,18 +1,13 @@
 {
+  "editor.formatOnSave": true,
   "cSpell.words": [
-    "Gruvbox",
-    "Inconsolata",
     "JD's",
-    "analytics",
-    "builtin",
-    "frontmatter",
+    "editorconfig",
+    "flowtype",
     "jdinh",
     "jdinhify",
-    "monospace",
-    "noopener",
-    "noreferrer",
-    "nprogress",
-    "refs",
-    "setup"
+    "nextjs",
+    "typecheck",
+    "vercel"
   ]
 }

@@ -1,10 +1,8 @@
-name: build-deploy
+name: build & deploy
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build-deploy:
@@ -14,20 +12,26 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '12'
-      - uses: actions/cache@v1
+          node-version: '14'
+      - uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
       - run: npm ci
-      - run: npm run eslint:ci
+
+      - name: typecheck & lint
+        run: |
+          npm run typecheck
+          npm run eslint:ci
+
       - run: npm run build
+
       - name: deploy
-        if: github.ref == 'refs/heads/master'
         env:
-          NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
-          NOW_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
-          NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
-        run: npx now --token=${NOW_TOKEN} --prod --confirm public
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+        run: npx vercel --token=${VERCEL_TOKEN} --prod --confirm out

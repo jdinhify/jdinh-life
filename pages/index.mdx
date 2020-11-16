@@ -1,15 +1,10 @@
----
-title: Home
-keywords:
-  - web
-  - application
-  - react
-  - javascript
-showTitle: false
----
+import { PostList } from '../src/components/post-list'
 
-import { PostList } from '../components/post-list'
-import { Box } from 'theme-ui'
+export const metadata = {
+  title: 'Home',
+  keywords: ['web', 'application', 'react', 'javascript'],
+  hideTitle: true,
+}
 
 Hi there 👋
 
@@ -27,8 +22,8 @@ If you like something you read here, please feel free to share it and let me kno
 
 ## Recent posts
 
-<Box sx={{ paddingLeft: '1.55rem' }}>
+<div style={{ paddingLeft: '1.55rem' }}>
   <PostList limit={3} />
-</Box>
+</div>
 
 [Browse all posts](/posts)
